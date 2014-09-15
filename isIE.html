@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+function test() {
+    var a = 5,
+        b = document.createElement("DIV");
+    b.innerHTML = "<!--[if !IE]>--><i><i><!--<![endif]-->";
+    if (b.getElementsByTagName("i")[0]) return false;
+    for ( ;!b.getElementsByTagName("i")[0] ; b.innerHTML = "<!--[if IE " + ++a + "]><i></i><![endif]-->");
+    return a;
+}
+</script>
+</body>
+</html>
